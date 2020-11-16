@@ -84,11 +84,17 @@ void HSet::transfer(std::vector<std::vector<Entry>> *tempTable, int newCapacity)
 }
 
 bool HSet::operator==(HSet &other) const {
+    //todo
     if (size() != other.size())
         return false;
     for (auto a : *table)
         for (auto e : a)
             if (!other.contains(e.value))
+                return false;
+
+    for (auto a : *other.table)
+        for (auto e : a)
+            if (!contains(e.value))
                 return false;
 
 }

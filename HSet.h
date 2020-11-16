@@ -11,6 +11,7 @@
 
 class HSet {
 public:
+
     bool put(Restaurant value);
     bool contains(Restaurant restaurant) const;
     static const int MAXIMUM_CAPACITY = 100;
